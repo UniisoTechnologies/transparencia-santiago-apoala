@@ -1,0 +1,142 @@
+
+body{
+	margin:0;
+	padding: 0;
+	font-family: sans-serif;
+}
+nav{
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+	background: #BDC3C7;
+	display: block;
+	z-index: 1;
+	overflow-y: inside;
+
+}
+
+ul{
+	display: center;
+	width: 70%;
+	margin: 0 auto;
+	padding: 0;
+	overflow: hidden;
+}
+
+ul li{
+	list-style: none;
+	display: inline-block;
+	
+}
+
+ul li:hover{
+
+	background: #4D5656;
+
+}
+ul li a:hover{
+	text-decoration: none;	
+	color: orange;
+	font-family: arial;
+	
+}
+ul li a{
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	padding: 15px;
+	
+}
+.logos{
+	margin-left: 5%;
+}
+.imagen{
+	margin-left: 3%;
+		width: 7%;
+		height: 7%;
+}
+.imagen1{
+	margin-left: 3%;
+		width: 7%;
+		height: 7%;		
+}
+.imagen2{
+		margin-left: 2%;
+		
+		width: 25%;
+		height: 10%;		
+}
+.im{
+	width: 40%;
+	height: 20%;
+	}
+
+.imag{
+	width:25%;
+	height:0;
+}
+
+
+
+
+.toggle{
+	width: 100%;
+	padding: 1% 2%;
+	background: #797D7F; 	
+	text-align: right;
+	box-sizing: border-box;
+	color: #fff;
+	font-size: 100%;	
+	display: none;
+	
+}
+
+.estatico{
+position: fixed;
+}
+
+.cabecera{
+		margin-left: 5%;
+		margin-right: 5%;
+}
+
+.uno{
+	max-width: 100%;
+}
+  	@media(max-width: 768px){
+  		.toggle{
+  			display: block;
+  		}
+  		ul{
+			width: 100%;
+			display: none;
+		}
+
+		ul li{
+			display: block;
+			text-align: center; 
+			font-size: 20px;
+			padding: 3%;
+		}
+		.active{
+			display: block;
+		}
+
+  	}
+
+
+  	
+	
+.btn:focus, .btn:active, button:focus, button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#image-gallery .modal-footer{
+  display: block;
+}
+
+.thumb{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
