@@ -12,10 +12,10 @@
 <body>
 <div id="dos">
 	<div id="uno" class="logos">
-		<img src="../imagen/APOALA.JPG" class="imagen">
-		<img src="../imagen/r3.png" class="imagen2">
-		<img src="../imagen/logo.png" class="im">
-		<img src="../imagen/Gobierno.png" class="imagen1">		
+		<img src="images/APOALA.JPG" class="imagen">
+		<img src="images/r3.png" class="imagen2">
+		<img src="images/logo.png" class="im">
+		<img src="images/Gobierno.png" class="imagen1">		
 	</div>
 	<nav>
 		<div class="toggle">

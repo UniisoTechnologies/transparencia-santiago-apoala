@@ -1,5 +1,5 @@
 
-@extends('encabezado')
+@extends('plantilla')
 @section('seccion')
 @endsection
 <div class="container">

@@ -1,0 +1,93 @@
+#3 Número de reproducciones, descargas (películas, música o descargas) en cada cuenta (top10). Nombre y total.
+  select idusuario, nombre,count(idusuario) as total
+ 	from datamartfinal1
+ 	where avance>0
+ 	group by idusuario 
+ 	order by total desc
+ 	limit 10;
+#----
+
+select idusuario, nombre, count(idusuario) as total
+			from usuario as u natural join `usuario-perfil`
+			natural join `perfil-pelicula` as pp
+			 where pp.avance>0 
+			 group by idusuario
+			 order by total desc
+			 limit 10;
+
+
+
+
+-- por sexo entre semana
+select sexo,(count(sexo)*100/(select count(distinct idusuario) from datamartfinal1) )as porcentaje from (
+SELECT distinct idusuario , sexo FROM carga.datamartfinal1 where entre_semana='si' 
+) as c1 group by c1.sexo;
+
+
+
+select sexo,(count(sexo)* 100 /(select count(idusuario) from usuario)) as porcentaje from usuario natural join (
+select idusuario,(ELT(WEEKDAY(fecha_suscripcion) + 1, 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo')) AS DIA_SEMANA
+FROM suscripcion 
+where 
+(ELT(WEEKDAY(fecha_suscripcion) + 1, 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'))='Lunes'  or
+(ELT(WEEKDAY(fecha_suscripcion) + 1, 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'))='Martes'  or
+(ELT(WEEKDAY(fecha_suscripcion) + 1, 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'))='Miercoles'  or
+(ELT(WEEKDAY(fecha_suscripcion) + 1, 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'))='Jueves'  or
+(ELT(WEEKDAY(fecha_suscripcion) + 1, 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'))='Viernes'
+)as c1 group by sexo;
+
+
+-- por sexo en fin de semana
+
+select sexo,(count(sexo)*100/(select count(distinct idusuario) from datamartfinal1) )as porcentaje from (
+SELECT distinct idusuario , sexo FROM carga.datamartfinal1 where entre_semana='no' 
+) as c1 group by c1.sexo;
+
+
+
+
+
+
+select sexo,(count(sexo)* 100 /(select count(idusuario) from usuario)) as porcentaje from usuario natural join (
+select idusuario,(ELT(WEEKDAY(fecha_suscripcion) + 1, 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo')) AS DIA_SEMANA
+FROM suscripcion 
+where 
+(ELT(WEEKDAY(fecha_suscripcion) + 1, 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'))='Sabado'  or
+(ELT(WEEKDAY(fecha_suscripcion) + 1, 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'))='Domingo' 
+)as c1 group by sexo;
+
+
+
+
+
+-- 3
+
+ select idusuario,nombre as usuario, count(idpelicula) as VecesReproducidas 
+	from datamartfinal1
+ 		where idpelicula is not null group by idusuario order by count(idpelicula) desc limit 10;
+ 
+ 
+ 
+ select c1.idusuario,count(c1.peliculas) as vistos from 
+(select netflix3.`usuario-perfil`.idusuario, netflix3.`usuario-perfil`.idperfil,netflix3.`perfil-pelicula`.idpelicula as peliculas  
+from netflix3.`usuario-perfil` inner join
+ netflix3.`perfil-pelicula` on netflix3.`perfil-pelicula`.idperfil=netflix3.`usuario-perfil`.idperfil order by idusuario)as c1 group by c1.idusuario order by vistos desc limit 10;
+
+-- 4
+
+select sexo, count(sexo) cuantos  from (
+ select idusuario,sexo,nombre as usuario, count(idpelicula) as VecesReproducidas 
+	from datamartfinal1
+ 		where idpelicula is not null and idusuario is not null group by idusuario 
+)as c1 group by sexo;
+
+
+
+
+select sexo,count(sexo) cuantos from usuario natural join 
+( select c1.idusuario,count(c1.peliculas) as vistos from 
+(select netflix3.`usuario-perfil`.idusuario, netflix3.`usuario-perfil`.idperfil,netflix3.`perfil-pelicula`.idpelicula as peliculas  
+from netflix3.`usuario-perfil` inner join
+ netflix3.`perfil-pelicula` on netflix3.`perfil-pelicula`.idperfil=netflix3.`usuario-perfil`.idperfil order by idusuario)
+ as c1 group by c1.idusuario 
+)as c4 group by sexo;

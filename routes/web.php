@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('portal.index');
+    return view('Portal.index');
 });
