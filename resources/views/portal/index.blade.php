@@ -1,66 +1,34 @@
 
 @extends('plantilla')
 @section('seccion')
-@endsection
 <div class="container">
  
- <center>
-<div id="carousel-example-2" class="carousel slide carousel-fade col-md-9" data-ride="carousel" style=" margin-top:1%;">
-  <!--Indicators-->
-  <ol class="carousel-indicators">
-    <li data-target="carousel-example-2" data-slide-to="0" class="active"></li>
-    <li data-target="carousel-example-2" data-slide-to="1"></li>
-    <li data-target="carousel-example-2" data-slide-to="2"></li>
-  </ol>
-  <!--/.Indicators-->
-  <!--Slides-->
-  <div class="carousel-inner" role="listbox" style="max-height:auto;">
-    <div class="carousel-item active">
-      <div class="view">
-        <img class="d-block w-100" src="images/cascadas/CAM03291.jpg" alt="First slide" style="height: 480px;">
-        <div class="mask rgba-black-light"></div>
-      </div>
-      <div class="carousel-caption">
-        <h3 class="h3-responsive">Santiago Apoala</h3>
-    
-      </div>
-    </div>
-    <div class="carousel-item">
-      <!--Mask color-->
-      <div class="view">
-        <img class="d-block w-100" src="images/cascadas/CAM03304.jpg" alt="Second slide" style="height: 480px";>
-        <div class="mask rgba-black-strong"></div>
-      </div>
-      <div class="carousel-caption">
-        <h3 class="h3-responsive">Santiago Apoala</h3>
-        
-      </div>
-    </div>
-    <div class="carousel-item">
-      <!--Mask color-->
-      <div class="view">
-        <img class="d-block w-100" src="images/cascadas/CAM02951-1.jpg" alt="Third slide" style="height: 480px";>
-        <div class="mask rgba-black-slight"></div>
-      </div>
-      <div class="carousel-caption">
-      
-        
-      </div>
-    </div>
-  </div>
-  <!--/.Slides-->
-  <!--Controls-->
-  <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-  <!--/.Controls-->
-</div>
-</center>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src=".../800x400?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src=".../800x400?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+        </div>
 <!--/.Carousel Wrapper-->
 </div>
 <center>
@@ -117,7 +85,7 @@
                                 <h4 class="font-up font-bold deep-purple-text mb-3"><strong>Ubicanos:</strong></h4>
                                 <!--Google mapa-->
                                 <div id="map-responsive" class="z-depth-1" style="height: 400px">
-                                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15208.163228465033!2d-97.1445807796377!3d17.648226204662823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c663cce175f115%3A0x5c4169323d49a9f8!2sSantiago+Apoala%2C+Oax.!5e0!3m2!1ses-419!2smx!4v1539052680100" width="500" height="350" frameborder="0" style="border:0; padding-top: 1em;" allowfullscreen></iframe>
+                                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15208.163228465033!2d-97.1445807796377!3d17.648226204662823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c663cce175f115%3A0x5c4169323d49a9f8!2sSantiago+Apoala%2C+Oax.!5e0!3m2!1ses-419!2smx!4v1539052680100" width="400" height="350" frameborder="0" style="border:0; padding-top: 1em;" allowfullscreen></iframe>
                                 </div>
                             </div>
                            <!--/.Card contenido-->
@@ -168,6 +136,8 @@
   </div>
     <hr></center>
 <div style="height: 5px;"></div>
+@endsection
+
 
 
 
